@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    return head(:forbidden) unless current_user.admin? || current_user.try(:id) == @post.owner_id
+    return head(:forbidden) unless current_user.admin? || current_user.try(:id) == @user.id
   end
 
 end
